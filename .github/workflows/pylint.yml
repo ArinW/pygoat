@@ -1,4 +1,4 @@
-name: CI
+name : CI
 
 on: [push]
 
@@ -11,7 +11,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python
+    - name : Set uo Python
       uses: actions/setup-python@v2
       with: 
         python-version: 3.8
@@ -21,9 +21,6 @@ jobs:
 
     - name: Run Bandit Scan
       run: bandit -ll -ii -r . -f json -o bandit-report.json
-
-    - name: Check if report was created
-      run: ls -lah bandit-report.json
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
